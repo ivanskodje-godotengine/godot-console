@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://console/console.tscn" type="PackedScene" id=1]
+
+[node name="Example" type="Node"]
+
+[node name="console" parent="." instance=ExtResource( 1 )]
+
+input_map_enter = "console_enter"
+input_map_toggle = "console_toggle"
+
+[node name="demo_text" type="Label" parent="."]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+text = "Press \nF1 \nto enable console\n\nEnter \"test\" to test a command\n\nNB: Remember to set input_map for enter and toggle!"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+

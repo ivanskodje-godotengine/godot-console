@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="scripts/console.gd" type="Script" id=1]
+[ext_resource path="res://console/animation/console_close.anm" type="Animation" id=2]
+[ext_resource path="res://console/animation/console_open.anm" type="Animation" id=3]
+
+[node name="console" type="CanvasLayer"]
+
+layer = 5
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+script/script = ExtResource( 1 )
+__meta__ = { "__editor_plugin_screen__":"2D" }
+input_console_enter = "console_enter"
+input_console_toggle = "console_toggle"
+
+[node name="control" type="Control" parent="."]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = true
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="panel" type="Panel" parent="control"]
+
+visibility/self_opacity = 0.8
+anchor/right = 1
+focus/ignore_mouse = true
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="rich_text_label" type="RichTextLabel" parent="control/panel"]
+
+anchor/right = 1
+anchor/bottom = 1
+margin/bottom = 25.0
+focus/ignore_mouse = true
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+bbcode/enabled = false
+bbcode/bbcode = ""
+visible_characters = -1
+
+[node name="line_edit" type="LineEdit" parent="control/panel"]
+
+anchor/top = 1
+anchor/right = 1
+margin/top = 23.0
+focus/ignore_mouse = true
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = ""
+max_length = 150
+editable = true
+secret = false
+
+[node name="animation_player" type="AnimationPlayer" parent="control"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/close_console = ExtResource( 2 )
+anims/open_console = ExtResource( 3 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+
